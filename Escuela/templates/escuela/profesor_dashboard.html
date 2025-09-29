@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Panel Profesor</title>
+</head>
+<body>
+    <h1>Bienvenido, {{ teacher.user.username }}</h1>
+
+    <h2>Asignaciones</h2>
+    <ul>
+        {% for assignment in assignments %}
+            <li>{{ assignment.subject.name }} - {{ assignment.group.name }}</li>
+        {% empty %}
+            <li>No tienes asignaciones asignadas.</li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="{% url 'logout' %}">Cerrar sesión</a></p>
+</body>
+</html>
